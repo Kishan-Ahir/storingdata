@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book a call</title>
+    <style>
+        form {
+            width: 75%;
+            margin: auto;
+            border: 2px solid rgb(255, 132, 0) ;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        label {
+            padding-left: 15px;
+        }
+        input {
+            margin-left: 15px;
+            margin-top: 5px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <form id="form">
+            <h1 style="color: rgb(255, 132, 0);text-align: center;padding: 40px 0 0 0;">Book a call</h1>
+            <p style="text-align: center;">Book a call slot and our representative will call you within 1hr of selected time.</p>
+
+
+            <div class="input-group">
+                <label for="fname" class="input-group-text">Name</label>
+                <input type="text" id="fname" name="fname" class="form-control">
+            </div>
+            <br>
+            <div class="input-group">
+                <label for="email" class="input-group-text">Email</label>
+                <input type="email" id="email" name="email" class="form-control" >
+            </div>
+            <br>
+            <div class="input-group">
+                <label for="phone" class="input-group-text">Phone number</label>
+                <input type="tel" id="phone" name="phone" class="form-control">
+            </div>
+            <br>
+            <div class="input-group">
+                <div class="input-group-text">Time for call:</div>
+                <input type="date" id="date" name="date" style="border: none; padding-left: 15px;">
+                <input type="time" id="time" name="time" style="border: none;">
+            </div>
+            <br>
+            <input class="form-control"type="submit" id="submit" value="GET A CALL" style="color: white; background-color: rgb(255, 132, 0);font-family:sans-serif;height: 40px;font-size:large;margin-bottom: 10px;border: none;;width: 100%;border-radius: 10px;">   
+        </form>   
+    </div> 
+    <script src="bookingform.js"></script>  
+</body>
+</html>
