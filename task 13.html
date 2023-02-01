@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+    <title>Task 12</title>
+</head>
+<body>
+    <form id="form" onsubmit="savetolocalstorage(event)"> <!--on submit this function will be called which have input as event which here in this case is submit button click -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="email">Email Id:</label>
+        <input type="text" id="email" name="email">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone">
+        <input type="submit" id="submit">
+    </form>
+    <ul id="itemlist"></ul> <!--we dont want to store items in form we wanted to store outside the form-->
+    <script>
+        function savetolocalstorage(event){
+            event.preventDefault();
+
+            let name = event.target.name.value;
+            let email = event.target.email.value;
+            let phone = event.target.phone.value;
+
+            let data = {
+                 name,
+                 email,
+                 phone
+            };
+            localStorage.setItem(data.name,JSON.stringify(data));
+            showonscreen(data); 
+            function showonscreen(data){
+                let perentelement = document.getElementById('itemlist');
+                let childelement = document.createElement('li');
+                let text = document.createTextNode(data.name+' '+data.email+' '+data.phone+'   ');
+                childelement.appendChild(text);
+                let delbtn = document.createElement('input');
+                delbtn.type = 'button';
+                delbtn.value = 'Delete';
+
+                delbtn.onclick = () =>  {  //This will only trigger when button is clicked.
+                           
+                    localStorage.removeItem(data.name);
+                    perentelement.removeChild(childelement);
+                }
+                childelement.appendChild(delbtn);
+                perentelement.appendChild(childelement);
+                
+
+                /*//Alternative way is:Directly adding html into parent element
+                perentelement.innerHTML = perentelement.innerHTML + '<li>' + data.name + ' ' + data.email + ' ' + data.phone + ' '+ '</li>';*/
+
+                
+        }
+
+        }
+    </script>
+</body>
+</html>
